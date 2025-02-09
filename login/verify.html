@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Verification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(45deg, #4b6cb7, #182848);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .verify-box {
+            width: 380px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #182848;
+        }
+
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #999;
+            border-radius: 5px;
+            outline: none;
+            padding-right: 35px;
+        }
+
+        .verify-btn {
+            width: 100%;
+            padding: 10px 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .verify-btn:hover {
+            background: linear-gradient(to right, #182848, #4b6cb7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="verify-box">
+            <h2>Member Verification</h2>
+            <form id="verify-form">
+                <div class="password-container">
+                    <input type="password" class="input-field" placeholder="Enter Member Password" required>
+                    <i class="toggle-password fas fa-eye-slash"></i>
+                </div>
+                <button type="submit" class="verify-btn">Verify</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const togglePassword = document.querySelector('.toggle-password');
+        const passwordInput = document.querySelector('input[type="password"]');
+
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        document.getElementById('verify-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const password = passwordInput.value;
+            
+            if (password === 'Omariisthebest') {
+                window.location.href = 'login.html';
+            } else {
+                alert('Invalid member password!');
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,54 @@
+/* Topbar styles */
+.topbar {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    text-align: center;
+    background-color: white;
+    margin: 0;
+    height: 80px; /* Fixed height instead of vh */
+    align-items: center; /* Vertically center content */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+/* Main content styles */
+.main {
+    min-height: calc(100vh - 80px); /* Ensures the main content takes up the remaining space below the topbar */
+    background-image: url(images/wallp.jpg);
+    background-size: cover; /* Better for background images */
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    position: relative; /* Allows for proper layout positioning */
+    animation: change 15s infinite;
+    animation-delay: 10s;
+}
+
+/* Footer styles */
+.footer {
+    background-color: black;
+    color: white;
+    font-size: small;
+    padding: 20px;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: relative; /* Allow the footer to adapt to the page */
+    width: 100%;
+    bottom: 0; /* Stick the footer to the bottom */
+}
+
+/* Ensure footer sticks to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main {
+    flex-grow: 1; /* Makes sure the main content takes the available space between topbar and footer */
+}
