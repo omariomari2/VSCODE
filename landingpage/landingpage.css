@@ -1,5 +1,5 @@
 body{
-    background-color: #B8B0B7; margin: 0; overflow-x: hidden;
+    background-color: #B8B0B7; margin: 0; overflow-x: hidden; font-family: 'Poppins', sans-serif;
 }
 .topbar{
     display: grid; grid-template-columns: repeat(9, 1fr); text-align: center;
@@ -14,6 +14,7 @@ body{
 
 .topbar div{
     z-index: 1000px; color: black; align-content: center; height: 100%; 
+    font-family: 'Poppins', sans-serif; font-weight: 500; text-align: center; cursor: pointer;
 }
 
 .icons img{
@@ -77,11 +78,11 @@ body{
     animation: jump 2s infinite ease-in-out;
 }
 h1{
-    color: white; z-index: 1000; font-size: 90px; text-align: left; justify-items: center;
+    color: white; z-index: 1000; font-size: 90px; text-align: left; justify-items: center; font-family: 'Poppins', sans-serif; font-weight: 600;
 }
 .content{
-    display: grid; place-self: center; color: white; padding-left: 20px; font-family: Arial;
-    line-height: 40px; background-color: #bbafa652; border-radius: 5px; font-weight: 700;
+    display: grid; place-self: center; color: white; padding-left: 20px; font-family: 'Poppins', sans-serif;
+    line-height: 40px; background-color: #bbafa652; border-radius: 5px; font-weight: 500;
     font-stretch: expanded; transition: all 1s;
 }
 .content:hover{
@@ -97,35 +98,86 @@ h1{
     transform: scale(1.2); box-shadow: 0px 5px 10px black;
 }
 
-.footer{
-    background-color: black; height: 30em; width: 100%; top: 114.2vh; 
-    display: grid; grid-template-columns: repeat(6, 1fr); color: white;
-    font-size: small; padding: 10px; place-items: center;
-    line-height: 10px;
+.footer {
+    background-color: #1a1a1a;  /* Darker background for more professional look */
+    min-height: 25rem;  /* Changed from fixed height to min-height */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    color: #f5f5f5;  /* Lighter text for better contrast */
+    font-family: 'Poppins', sans-serif;  /* Changed to Poppins */
+    padding: 3rem 2rem;  /* Increased padding */
+    place-items: start center;  /* Changed from center to align items to top */
+    gap: 1rem;
+    line-height: 1.6;  /* Improved line height for better readability */
 }
 
-.footer h3{
-    font-size: large; line-height: 20px; cursor: pointer; text-decoration: underline;
-    font-family: 'Times New Roman';
+.footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;  /* Removed underline */
+    font-family: 'Poppins', sans-serif;  /* Changed to Poppins */
+    position: relative;
+    cursor: default;  /* Changed from pointer since it's a heading */
 }
 
-.footer p{
-    cursor: pointer;  
+.footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 2rem;
+    height: 2px;
+    background-color: #4b6cb7;  /* Added underline accent */
 }
 
-.footer p:hover{
-    text-decoration: underline; color: yellow;
+.footer p {
+    font-size: 0.9rem;
+    color: #b3b3b3;  /* Softer color for paragraph text */
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;  /* Added Poppins */
+    font-weight: 300;  /* Light weight for better readability */
+}
+
+.footer p:hover {
+    color: #4b6cb7;  /* Changed hover color to match theme */
+    text-decoration: none;  /* Removed underline on hover */
+}
+
+.copy {
+    grid-column: span 6;  /* Make copyright section span full width */
+    text-align: center;
+    border-top: 1px solid #333;  /* Added separator line */
+    margin-top: 2rem;
+    padding-top: 2rem;
+}
+
+.copy p {
+    color: #808080;  /* Dimmer color for copyright text */
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;  /* Added Poppins */
+    font-weight: 300;
+}
+
+.copy .sponsors,
+.copy .ack {
+    display: inline-block;
+    margin: 0 1rem;
 }
 
 .section{
     border-top: black 2px; background-color: white; border-top-style:groove; text-align: center;
 }
 
-.section h1{
-    color: black; font-family: Cambria; color: rgba(48, 48, 9); opacity: 0.2; 
+.team-section h1{
+    color: black; font-family: 'Poppins', sans-serif; color: rgba(48, 48, 9); opacity: 0.2; 
     text-align: center; transition: all 0.4s; cursor: pointer;
 }
-.section h1:hover{
+.team-section h1:hover{
     transform: scaleX(1.1); text-decoration: underline; opacity: 0.9;
 }
 .about-research{
@@ -135,7 +187,7 @@ h1{
 }
 
 .about-research div, .about-research h2{
-    text-align: center; font-family: Cambria; transition: all 0.4s; color: rgba(48, 48, 9, 0.726);
+    text-align: center; font-family: 'Poppins', sans-serif; transition: all 0.4s; color: rgba(48, 48, 9, 0.726);
     cursor: pointer;
 }
 
@@ -162,4 +214,223 @@ h1{
 
 .about-research div:hover h2{
     transform: scale(1.1); text-decoration: underline; 
+}
+
+/* Team Section Styles */
+.team-section {
+    height: auto;
+    padding: 30px;
+    background-color: #f5f5f5;
+    overflow-x: hidden; /* Add horizontal scroll containment */
+}
+
+.team-section h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.team-profiles {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.profile-card {
+    width: 520px;
+    min-height: 550px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    margin-right: 2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-front {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    transition: all 0.4s ease;
+}
+
+/* Set background for first card */
+.profile-card:nth-child(2) .card-front {
+    background-image: url('../landingpage/images/profile.JPG');
+}
+.profile-card:nth-child(3) .card-front {
+    background-image: url('../teammate/img/kelvin.jpg');
+}
+.profile-card:nth-child(4) .card-front {
+    background-image: url('../teammate/img/patrick.jpg');
+}
+.profile-card:nth-child(5) .card-front {
+    background-image: url('../teammate/img/boakye.jpg');
+}
+
+.profile-card:first-child .card-front {
+    background-image: url('../teammate/img/micheal.jpg');
+}
+.card-front h2 {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    font-size: 1.8rem;
+    margin: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-front::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* Hover effects */
+.profile-card:hover .card-front {
+    filter: blur(2px) brightness(0.9);
+}
+
+.profile-card:hover .card-front h2 {
+    opacity: 0;
+}
+
+.profile-card:hover .card-back {
+    opacity: 0.8;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 0;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.profile-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #000;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.profile-info .title {
+    color: white;
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+    line-height: 1.4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-tag {
+    background: #4b6cb7;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.title-tag:hover {
+    background: #182848;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    color: #4b6cb7;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #182848;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.skill-tag {
+    background: #4b6cb7;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.skill-tag:hover {
+    background: #182848;
+}
+
+/* Custom scrollbar */
+.team-profiles::-webkit-scrollbar {
+    height: 8px;
+}
+
+.team-profiles::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.team-profiles::-webkit-scrollbar-thumb {
+    background: #4b6cb7;
+    border-radius: 4px;
+}
+
+.profile-info {
+    text-align: center;
+    /* Optionally, if the div has a fixed width and you want to center it:
+    margin: 0 auto;
+    */
 }
